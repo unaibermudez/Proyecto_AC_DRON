@@ -732,9 +732,9 @@ TABLA_PWM0:
 	INC A
 	MOVC A,@A+PC
 	RET
-	DB 0xFF ; PWM0 %0-ra (geldi)
-	DB 0xB3 ; %30 (jaitsi)
-	DB 0x4D ; %70 (igo)
+	DB 0xFF ; 0%
+	DB 0xB3 ; 30%
+	DB 0x4D ; 70%
 	NOP ; [-]
 	DB 0x80 ; %50
 	DB 0xB3 ; %30
@@ -771,9 +771,9 @@ TABLA1_PWM1:
 	INC A
 	MOVC A,@A+PC
 	RET
-	DB 0xFF ; PWM1 %0-ra jarri (geldi)
-	DB 0xFF ; %0
-	DB 0xFF ; %0
+	DB 0xFF ; 0%
+	DB 0xFF ; 0%
+	DB 0xFF ; 0%
 	NOP ; [-]
 	DB 0x80 ; %50
 	DB 0x80 ; %50
@@ -810,7 +810,7 @@ TABLA2_PWM1:
        INC A
 	MOVC A,@A+PC
 	RET
-	DB 0x00 ; 00 (geldi)
+	DB 0x00 ; 00 parado
 	DB 0x00 ; 00
 	DB 0x00 ; 00
 	NOP ; [-]
@@ -826,7 +826,7 @@ TABLA2_PWM1:
 	NOP ; [-]
 	NOP ; [-]
 	NOP ; [-]
-	DB 0x03 ; 11 (aurrera)
+	DB 0x03 ; 11 avanza
 	DB 0x03 ; 11
 	DB 0x03 ; 11
 	NOP ; [-]
@@ -1156,7 +1156,7 @@ LISTA_EV_7:
 	AJMP	EVENTOS7_3	;EVENTO 3 tick_10ms
        RET                         
        NOP                  ;EVENTO 4
-       AJMP	EVENTOS7_5	;EVENTO 5 tick_8ms
+       AJMP	EVENTOS7_5	;EVENTO 5 tick_8s
        AJMP   EVENTOS7_6    ;EVENTO 6 tick_10s
        RET                        
 	NOP                  ;EVENTO 7
